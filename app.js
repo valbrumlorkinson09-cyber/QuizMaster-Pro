@@ -1,9 +1,20 @@
-const languages = {
+const data = {
 
 fr:{
 title:"Testez vos connaissances",
 subtitle:"Des milliers de quiz. Des défis. Des récompenses.",
 play:"Jouer Maintenant",
+cat:"Catégories",
+popular:"🔥 Quiz Populaires",
+culture:"Culture Générale",
+football:"Football",
+cinema:"Cinéma",
+music:"Musique",
+science:"Sciences",
+tech:"Technologie",
+geo:"Géographie",
+history:"Histoire",
+start:"Commencer",
 questions:[
 {
 q:"Quelle équipe a gagné la Coupe du Monde 2022 ?",
@@ -14,11 +25,6 @@ c:1
 q:"Combien de planètes existe-t-il dans le système solaire ?",
 a:["7","8","9","10"],
 c:1
-},
-{
-q:"Qui a peint la Joconde ?",
-a:["Picasso","Van Gogh","Leonardo da Vinci","Michel-Ange"],
-c:2
 }
 ]
 },
@@ -28,6 +34,17 @@ en:{
 title:"Test your knowledge",
 subtitle:"Thousands of quizzes. Challenges. Rewards.",
 play:"Play Now",
+cat:"Categories",
+popular:"🔥 Popular Quizzes",
+culture:"General Knowledge",
+football:"Football",
+cinema:"Movies",
+music:"Music",
+science:"Science",
+tech:"Technology",
+geo:"Geography",
+history:"History",
+start:"Start",
 questions:[
 {
 q:"Which team won the 2022 World Cup?",
@@ -38,11 +55,6 @@ c:1
 q:"How many planets are in the Solar System?",
 a:["7","8","9","10"],
 c:1
-},
-{
-q:"Who painted the Mona Lisa?",
-a:["Picasso","Van Gogh","Leonardo da Vinci","Michelangelo"],
-c:2
 }
 ]
 },
@@ -52,6 +64,17 @@ ht:{
 title:"Teste konesans ou",
 subtitle:"Plizyè milye quiz. Defi. Rekonpans.",
 play:"Jwe Kounya",
+cat:"Kategori",
+popular:"🔥 Quiz Popilè",
+culture:"Konesans Jeneral",
+football:"Foutbòl",
+cinema:"Sinema",
+music:"Mizik",
+science:"Syans",
+tech:"Teknoloji",
+geo:"Jewografi",
+history:"Istwa",
+start:"Kòmanse",
 questions:[
 {
 q:"Ki ekip ki te genyen Koup di Mond 2022 la?",
@@ -62,11 +85,6 @@ c:1
 q:"Konbyen planèt ki genyen nan sistèm solè a?",
 a:["7","8","9","10"],
 c:1
-},
-{
-q:"Ki moun ki pentire Mona Lisa?",
-a:["Picasso","Van Gogh","Leonardo da Vinci","Michelangelo"],
-c:2
 }
 ]
 },
@@ -74,8 +92,19 @@ c:2
 
 es:{
 title:"Prueba tus conocimientos",
-subtitle:"Miles de quizzes. Retos. Recompensas.",
+subtitle:"Miles de quiz. Retos. Recompensas.",
 play:"Jugar Ahora",
+cat:"Categorías",
+popular:"🔥 Quiz Populares",
+culture:"Cultura General",
+football:"Fútbol",
+cinema:"Cine",
+music:"Música",
+science:"Ciencias",
+tech:"Tecnología",
+geo:"Geografía",
+history:"Historia",
+start:"Comenzar",
 questions:[
 {
 q:"¿Qué equipo ganó el Mundial 2022?",
@@ -86,11 +115,6 @@ c:1
 q:"¿Cuántos planetas hay en el sistema solar?",
 a:["7","8","9","10"],
 c:1
-},
-{
-q:"¿Quién pintó la Mona Lisa?",
-a:["Picasso","Van Gogh","Leonardo da Vinci","Miguel Ángel"],
-c:2
 }
 ]
 }
@@ -98,109 +122,87 @@ c:2
 };
 
 
-let currentLang="fr";
-let currentQuestion=0;
+
+let lang="fr";
+let index=0;
 let score=0;
 
 
 
+function changeLanguage(l){
+
+lang=l;
+
+document.getElementById("title").innerHTML=data[l].title;
+document.getElementById("subtitle").innerHTML=data[l].subtitle;
+document.getElementById("playBtn").innerHTML=data[l].play;
+
+document.getElementById("catTitle").innerHTML=data[l].cat;
+document.getElementById("popular").innerHTML=data[l].popular;
+
+document.getElementById("culture").innerHTML="🌍 "+data[l].culture;
+document.getElementById("football").innerHTML="⚽ "+data[l].football;
+document.getElementById("cinema").innerHTML="🎬 "+data[l].cinema;
+document.getElementById("music").innerHTML="🎵 "+data[l].music;
+document.getElementById("science").innerHTML="🧪 "+data[l].science;
+document.getElementById("tech").innerHTML="💻 "+data[l].tech;
+document.getElementById("geo").innerHTML="🌎 "+data[l].geo;
+document.getElementById("history").innerHTML="📜 "+data[l].history;
+
+}
+
+
+
 const playBtn=document.getElementById("playBtn");
-const questionBox=document.getElementById("question");
-const answersBox=document.getElementById("answers");
-const quizSection=document.getElementById("quizSection");
-const nextBtn=document.getElementById("nextBtn");
+const quiz=document.getElementById("quizSection");
+const question=document.getElementById("question");
+const answers=document.getElementById("answers");
+const next=document.getElementById("nextBtn");
 const result=document.getElementById("result");
 const scoreText=document.getElementById("scoreText");
 
 
+playBtn.onclick=start;
 
 
-function changeLanguage(lang){
+function start(){
 
-currentLang=lang;
-
-document.getElementById("title").innerHTML=
-languages[lang].title;
-
-document.getElementById("subtitle").innerHTML=
-languages[lang].subtitle;
-
-document.getElementById("playBtn").innerHTML=
-languages[lang].play;
-
-}
-
-
-
-
-
-function startQuiz(){
-
-currentQuestion=0;
+index=0;
 score=0;
 
-quizSection.style.display="block";
+quiz.style.display="block";
 result.style.display="none";
 
-showQuestion();
+show();
 
 }
 
 
 
+function show(){
 
-playBtn.onclick=startQuiz;
+answers.innerHTML="";
 
+let q=data[lang].questions[index];
 
-
-document.querySelectorAll(".startQuiz").forEach(btn=>{
-
-btn.onclick=startQuiz;
-
-});
+question.innerHTML=q.q;
 
 
+q.a.forEach((x,i)=>{
 
+let b=document.createElement("button");
 
+b.innerHTML=x;
 
-function showQuestion(){
+b.onclick=()=>{
 
-answersBox.innerHTML="";
-
-let q=languages[currentLang].questions[currentQuestion];
-
-
-questionBox.innerHTML=
-(currentQuestion+1)+". "+q.q;
-
-
-
-q.a.forEach((answer,index)=>{
-
-
-let btn=document.createElement("button");
-
-btn.innerHTML=answer;
-
-
-btn.onclick=()=>{
-
-
-if(index===q.c){
-
+if(i===q.c){
 score++;
-
 }
-
-
-nextBtn.style.display="block";
-
 
 };
 
-
-answersBox.appendChild(btn);
-
+answers.appendChild(b);
 
 });
 
@@ -209,46 +211,22 @@ answersBox.appendChild(btn);
 
 
 
+next.onclick=()=>{
 
+index++;
 
-nextBtn.onclick=()=>{
+if(index<data[lang].questions.length){
 
-
-currentQuestion++;
-
-
-if(currentQuestion < languages[currentLang].questions.length){
-
-showQuestion();
+show();
 
 }else{
 
-finishQuiz();
-
-}
-
-
-};
-
-
-
-
-
-
-function finishQuiz(){
-
-quizSection.style.display="none";
-
+quiz.style.display="none";
 result.style.display="block";
 
-
 scoreText.innerHTML=
-"🏆 Score : "+score+"/"+languages[currentLang].questions.length;
-
+"🏆 Score : "+score+"/"+data[lang].questions.length;
 
 }
 
-
-
-
-document.getElementById("restartBtn").onclick=startQuiz;
+};
