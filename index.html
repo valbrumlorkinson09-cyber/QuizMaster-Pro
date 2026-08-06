@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 
 <meta charset="UTF-8">
@@ -27,6 +28,22 @@
 </div>
 
 
+<!-- CHOIX LANGUE -->
+
+<div class="languages">
+
+<button onclick="changeLanguage('fr')">🇫🇷 FR</button>
+
+<button onclick="changeLanguage('en')">🇬🇧 EN</button>
+
+<button onclick="changeLanguage('ht')">🇭🇹 HT</button>
+
+<button onclick="changeLanguage('es')">🇪🇸 ES</button>
+
+</div>
+
+
+
 <h1 id="title">
 Testez vos connaissances
 </h1>
@@ -38,35 +55,12 @@ Des milliers de quiz. Des défis. Des récompenses.
 
 
 
-<!-- LANGUES -->
-
-<div class="languages">
-
-<button onclick="changeLanguage('fr')">
-🇫🇷 FR
-</button>
-
-<button onclick="changeLanguage('en')">
-🇬🇧 EN
-</button>
-
-<button onclick="changeLanguage('ht')">
-🇭🇹 HT
-</button>
-
-<button onclick="changeLanguage('es')">
-🇪🇸 ES
-</button>
-
-</div>
-
-
-
 <div class="search">
 
-<input type="search" placeholder="Rechercher un quiz...">
+<input id="search" type="search" placeholder="Rechercher un quiz...">
 
 </div>
+
 
 
 <button id="playBtn">
@@ -86,6 +80,7 @@ Jouer Maintenant
 
 <section>
 
+
 <h2 id="catTitle">
 Catégories
 </h2>
@@ -93,21 +88,45 @@ Catégories
 
 <div class="grid">
 
-<div class="card">🌍 Culture Générale</div>
 
-<div class="card">⚽ Football</div>
+<div class="card" id="culture">
+🌍 Culture Générale
+</div>
 
-<div class="card">🎬 Cinéma</div>
 
-<div class="card">🎵 Musique</div>
+<div class="card" id="football">
+⚽ Football
+</div>
 
-<div class="card">🧪 Sciences</div>
 
-<div class="card">💻 Technologie</div>
+<div class="card" id="cinema">
+🎬 Cinéma
+</div>
 
-<div class="card">🌎 Géographie</div>
 
-<div class="card">📜 Histoire</div>
+<div class="card" id="music">
+🎵 Musique
+</div>
+
+
+<div class="card" id="science">
+🧪 Sciences
+</div>
+
+
+<div class="card" id="tech">
+💻 Technologie
+</div>
+
+
+<div class="card" id="geo">
+🌎 Géographie
+</div>
+
+
+<div class="card" id="history">
+📜 Histoire
+</div>
 
 
 </div>
@@ -118,16 +137,17 @@ Catégories
 
 
 
+
 <section>
 
 
-<h2>
+<h2 id="popular">
 🔥 Quiz Populaires
 </h2>
 
 
-<div class="quiz-list">
 
+<div class="quiz-list">
 
 
 <div class="quiz-card">
@@ -160,7 +180,6 @@ Commencer
 
 
 
-
 <div class="quiz-card">
 
 <h3>Cinéma</h3>
@@ -172,7 +191,6 @@ Commencer
 </button>
 
 </div>
-
 
 
 </div>
@@ -189,14 +207,10 @@ Commencer
 <section id="quizSection" class="quiz-box" style="display:none;">
 
 
-<h2 id="question">
-Question
-</h2>
+<h2 id="question"></h2>
 
 
-<div id="answers">
-
-</div>
+<div id="answers"></div>
 
 
 <button id="nextBtn">
@@ -220,15 +234,11 @@ Question suivante ➡️
 </h2>
 
 
-<p id="scoreText">
-
-</p>
+<p id="scoreText"></p>
 
 
 <button id="restartBtn">
-
 Recommencer
-
 </button>
 
 
@@ -250,7 +260,6 @@ Recommencer
 
 <ol class="ranking">
 
-
 <li>👑 Joueur 1 - 2500 XP</li>
 
 <li>🥈 Joueur 2 - 2300 XP</li>
@@ -260,7 +269,6 @@ Recommencer
 <li>⭐ Joueur 4 - 1800 XP</li>
 
 <li>⭐ Joueur 5 - 1600 XP</li>
-
 
 </ol>
 
@@ -314,4 +322,5 @@ Recommencer
 
 
 </body>
+
 </html>
