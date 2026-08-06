@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,21 +15,57 @@
 
 </head>
 
+
 <body>
 
+
 <header class="hero">
+
 
 <div class="logo">
 🧠 QuizMaster <span>Pro</span>
 </div>
 
-<h1>Testez vos connaissances</h1>
 
-<p>Des milliers de quiz. Des défis. Des récompenses.</p>
+<h1 id="title">
+Testez vos connaissances
+</h1>
+
+
+<p id="subtitle">
+Des milliers de quiz. Des défis. Des récompenses.
+</p>
+
+
+
+<!-- LANGUES -->
+
+<div class="languages">
+
+<button onclick="changeLanguage('fr')">
+🇫🇷 FR
+</button>
+
+<button onclick="changeLanguage('en')">
+🇬🇧 EN
+</button>
+
+<button onclick="changeLanguage('ht')">
+🇭🇹 HT
+</button>
+
+<button onclick="changeLanguage('es')">
+🇪🇸 ES
+</button>
+
+</div>
+
 
 
 <div class="search">
+
 <input type="search" placeholder="Rechercher un quiz...">
+
 </div>
 
 
@@ -36,27 +73,42 @@
 Jouer Maintenant
 </button>
 
+
 </header>
+
+
 
 
 
 <main class="container">
 
 
+
 <section>
 
-<h2>Catégories</h2>
+<h2 id="catTitle">
+Catégories
+</h2>
+
 
 <div class="grid">
 
 <div class="card">🌍 Culture Générale</div>
+
 <div class="card">⚽ Football</div>
+
 <div class="card">🎬 Cinéma</div>
+
 <div class="card">🎵 Musique</div>
+
 <div class="card">🧪 Sciences</div>
+
 <div class="card">💻 Technologie</div>
+
 <div class="card">🌎 Géographie</div>
+
 <div class="card">📜 Histoire</div>
+
 
 </div>
 
@@ -64,17 +116,23 @@ Jouer Maintenant
 
 
 
+
+
 <section>
 
-<h2>🔥 Quiz Populaires</h2>
+
+<h2>
+🔥 Quiz Populaires
+</h2>
 
 
 <div class="quiz-list">
 
 
+
 <div class="quiz-card">
 
-<h3>Culture Générale #1</h3>
+<h3>Culture Générale</h3>
 
 <p>20 Questions</p>
 
@@ -83,6 +141,7 @@ Commencer
 </button>
 
 </div>
+
 
 
 
@@ -100,6 +159,8 @@ Commencer
 
 
 
+
+
 <div class="quiz-card">
 
 <h3>Cinéma</h3>
@@ -113,9 +174,13 @@ Commencer
 </div>
 
 
+
 </div>
 
+
 </section>
+
+
 
 
 
@@ -145,16 +210,25 @@ Question suivante ➡️
 
 
 
+
+
 <section id="result" class="result-box" style="display:none;">
 
 
-<h2>🏆 Résultat</h2>
+<h2>
+🏆 Résultat
+</h2>
 
-<p id="scoreText"></p>
+
+<p id="scoreText">
+
+</p>
 
 
 <button id="restartBtn">
+
 Recommencer
+
 </button>
 
 
@@ -164,13 +238,18 @@ Recommencer
 
 
 
+
+
 <section>
 
 
-<h2>🏆 Classement</h2>
+<h2>
+🏆 Classement
+</h2>
 
 
 <ol class="ranking">
+
 
 <li>👑 Joueur 1 - 2500 XP</li>
 
@@ -191,6 +270,8 @@ Recommencer
 
 
 </main>
+
+
 
 
 
@@ -227,8 +308,10 @@ Recommencer
 
 
 
+
+
 <script src="app.js"></script>
 
 
 </body>
-  </html>
+</html>
