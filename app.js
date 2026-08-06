@@ -1,14 +1,37 @@
-const playBtn = document.getElementById("playBtn");
+const questions = [
+  {
+    question: "Ki peyi ki genyen plis tit Koup di Mond?",
+    answers: [
+      "Brezil",
+      "Almay",
+      "Ajantin",
+      "Lafrans"
+    ],
+    correct: 0
+  },
 
-playBtn.addEventListener("click", () => {
-  alert("Bienvenue dans QuizMaster Pro 🧠🔥");
-});
+  {
+    question: "Konbyen planèt ki genyen nan sistèm solè a?",
+    answers: [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    correct: 1
+  },
 
+  {
+    question: "Ki moun ki ekri Mona Lisa?",
+    answers: [
+      "Picasso",
+      "Van Gogh",
+      "Leonardo da Vinci",
+      "Michelangelo"
+    ],
+    correct: 2
+  }
+];
 
-const buttons = document.querySelectorAll(".quiz-card button");
-
-buttons.forEach(button => {
-  button.addEventListener("click", () => {
-    alert("Quiz lancé 🚀 Bonne chance !");
-  });
-});
+let currentQuestion = 0;
+let score = 0;
