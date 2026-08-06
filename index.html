@@ -2,33 +2,53 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>QuizMaster Pro</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
 <header class="hero">
-  <div class="logo">🧠 QuizMaster <span>Pro</span></div>
-  <h1>Testez vos connaissances</h1>
-  <p>Des milliers de quiz. Des défis. Des récompenses.</p>
 
-  <div class="search">
-    <input type="search" placeholder="Rechercher un quiz...">
-  </div>
+<div class="logo">
+🧠 QuizMaster <span>Pro</span>
+</div>
 
-  <button id="playBtn">Jouer Maintenant</button>
+<h1>Testez vos connaissances</h1>
+
+<p>Des milliers de quiz. Des défis. Des récompenses.</p>
+
+
+<div class="search">
+<input type="search" placeholder="Rechercher un quiz...">
+</div>
+
+
+<button id="playBtn">
+Jouer Maintenant
+</button>
+
 </header>
+
+
 
 <main class="container">
 
+
 <section>
+
 <h2>Catégories</h2>
 
 <div class="grid">
+
 <div class="card">🌍 Culture Générale</div>
 <div class="card">⚽ Football</div>
 <div class="card">🎬 Cinéma</div>
@@ -37,62 +57,178 @@
 <div class="card">💻 Technologie</div>
 <div class="card">🌎 Géographie</div>
 <div class="card">📜 Histoire</div>
+
 </div>
 
 </section>
+
+
 
 <section>
 
 <h2>🔥 Quiz Populaires</h2>
 
+
 <div class="quiz-list">
 
+
 <div class="quiz-card">
+
 <h3>Culture Générale #1</h3>
+
 <p>20 Questions</p>
-<button>Commencer</button>
+
+<button class="startQuiz">
+Commencer
+</button>
+
 </div>
 
+
+
 <div class="quiz-card">
+
 <h3>Football</h3>
+
 <p>15 Questions</p>
-<button>Commencer</button>
+
+<button class="startQuiz">
+Commencer
+</button>
+
 </div>
 
+
+
 <div class="quiz-card">
+
 <h3>Cinéma</h3>
+
 <p>10 Questions</p>
-<button>Commencer</button>
+
+<button class="startQuiz">
+Commencer
+</button>
+
 </div>
+
 
 </div>
 
 </section>
+
+
+
+
+
+<section id="quizSection" class="quiz-box" style="display:none;">
+
+
+<h2 id="question">
+Question
+</h2>
+
+
+<div id="answers">
+
+</div>
+
+
+<button id="nextBtn">
+Question suivante ➡️
+</button>
+
+
+</section>
+
+
+
+
+
+<section id="result" class="result-box" style="display:none;">
+
+
+<h2>🏆 Résultat</h2>
+
+<p id="scoreText"></p>
+
+
+<button id="restartBtn">
+Recommencer
+</button>
+
+
+</section>
+
+
+
+
 
 <section>
 
+
 <h2>🏆 Classement</h2>
 
+
 <ol class="ranking">
+
 <li>👑 Joueur 1 - 2500 XP</li>
+
 <li>🥈 Joueur 2 - 2300 XP</li>
+
 <li>🥉 Joueur 3 - 2100 XP</li>
+
 <li>⭐ Joueur 4 - 1800 XP</li>
+
 <li>⭐ Joueur 5 - 1600 XP</li>
+
+
 </ol>
+
 
 </section>
 
+
+
 </main>
 
+
+
+
+
 <nav class="bottom-nav">
-<a class="active">🏠<span>Accueil</span></a>
-<a>📚<span>Quiz</span></a>
-<a>🏆<span>Classement</span></a>
-<a>👤<span>Profil</span></a>
+
+
+<a class="active">
+🏠
+<span>Accueil</span>
+</a>
+
+
+<a>
+📚
+<span>Quiz</span>
+</a>
+
+
+<a>
+🏆
+<span>Classement</span>
+</a>
+
+
+<a>
+👤
+<span>Profil</span>
+</a>
+
+
 </nav>
+
+
 
 <script src="app.js"></script>
 
+
 </body>
-</html>
+  </html>
