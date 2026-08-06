@@ -1,3 +1,4 @@
+alert("Nouvo QuizMaster V2 ap mache");
 let currentLanguage = "fr";
 
 let currentQuestion = 0;
