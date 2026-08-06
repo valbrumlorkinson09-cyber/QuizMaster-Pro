@@ -1,7 +1,14 @@
-const btn = document.querySelector(".btn");
+const playBtn = document.getElementById("playBtn");
 
-btn.addEventListener("click", () => {
+playBtn.addEventListener("click", () => {
+  alert("Bienvenue dans QuizMaster Pro 🧠🔥");
+});
 
-alert("Bienvenue sur QuizMaster Pro 🚀");
 
+const buttons = document.querySelectorAll(".quiz-card button");
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    alert("Quiz lancé 🚀 Bonne chance !");
+  });
 });
