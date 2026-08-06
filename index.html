@@ -10,6 +10,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
@@ -23,33 +24,62 @@
 <header class="hero">
 
 
+<div class="top">
+
 <div class="logo">
 🧠 QuizMaster <span>Pro</span>
 </div>
 
 
-<!-- CHOIX LANGUE -->
+<div class="player">
 
-<div class="languages">
+👤 <span id="playerName">
+Joueur
+</span>
 
-<button onclick="changeLanguage('fr')">🇫🇷 FR</button>
+<br>
 
-<button onclick="changeLanguage('en')">🇬🇧 EN</button>
+⭐ XP:
+<span id="xp">
+0
+</span>
 
-<button onclick="changeLanguage('ht')">🇭🇹 HT</button>
-
-<button onclick="changeLanguage('es')">🇪🇸 ES</button>
+</div>
 
 </div>
 
 
 
-<h1 id="title">
+
+<div class="language-box">
+
+<button onclick="changeLanguage('fr')">
+🇫🇷
+</button>
+
+<button onclick="changeLanguage('en')">
+🇬🇧
+</button>
+
+<button onclick="changeLanguage('ht')">
+🇭🇹
+</button>
+
+<button onclick="changeLanguage('es')">
+🇪🇸
+</button>
+
+
+</div>
+
+
+
+<h1 id="mainTitle">
 Testez vos connaissances
 </h1>
 
 
-<p id="subtitle">
+<p id="description">
 Des milliers de quiz. Des défis. Des récompenses.
 </p>
 
@@ -57,79 +87,177 @@ Des milliers de quiz. Des défis. Des récompenses.
 
 <div class="search">
 
-<input id="search" type="search" placeholder="Rechercher un quiz...">
+<input 
+type="search" 
+placeholder="Rechercher un quiz..."
+id="searchBox">
 
 </div>
 
 
 
 <button id="playBtn">
-Jouer Maintenant
+Jouer Maintenant 🚀
 </button>
 
 
+
 </header>
-
-
-
 
 
 <main class="container">
 
 
 
+<section class="profile-card">
+
+<h2>
+👤 Profil Joueur
+</h2>
+
+
+<div class="level">
+
+Niveau:
+<span id="level">
+1
+</span>
+
+</div>
+
+
+<div class="progress">
+
+<div id="xpBar"></div>
+
+</div>
+
+
+<p>
+XP:
+<span id="profileXP">
+0
+</span>
+/
+100
+</p>
+
+
+</section>
+
+
+
+
+
+
 <section>
 
 
-<h2 id="catTitle">
+<h2 id="categoryTitle">
 Catégories
 </h2>
+
 
 
 <div class="grid">
 
 
-<div class="card" id="culture">
-🌍 Culture Générale
+<div class="card" onclick="selectCategory('general')">
+
+🌍
+<span>
+Culture Générale
+</span>
+
+</div>
+
+
+
+<div class="card" onclick="selectCategory('football')">
+
+⚽
+<span>
+Football
+</span>
+
 </div>
 
 
-<div class="card" id="football">
-⚽ Football
+
+
+<div class="card" onclick="selectCategory('cinema')">
+
+🎬
+<span>
+Cinéma
+</span>
+
+</div>
+
+
+
+
+<div class="card" onclick="selectCategory('music')">
+
+🎵
+<span>
+Musique
+</span>
+
 </div>
 
 
-<div class="card" id="cinema">
-🎬 Cinéma
+
+
+<div class="card" onclick="selectCategory('science')">
+
+🧪
+<span>
+Sciences
+</span>
+
+</div>
+
+
+
+
+<div class="card" onclick="selectCategory('tech')">
+
+💻
+<span>
+Technologie
+</span>
+
 </div>
 
 
-<div class="card" id="music">
-🎵 Musique
+
+
+<div class="card" onclick="selectCategory('geo')">
+
+🌎
+<span>
+Géographie
+</span>
+
+</div>
+
+
+
+
+<div class="card" onclick="selectCategory('history')">
+
+📜
+<span>
+Histoire
+</span>
+
 </div>
 
 
-<div class="card" id="science">
-🧪 Sciences
-</div>
-
-
-<div class="card" id="tech">
-💻 Technologie
-</div>
-
-
-<div class="card" id="geo">
-🌎 Géographie
-</div>
-
-
-<div class="card" id="history">
-📜 Histoire
-</div>
-
 
 </div>
+
 
 </section>
 
@@ -138,57 +266,74 @@ Catégories
 
 
 
-<section>
+<section class="popular">
 
 
-<h2 id="popular">
+<h2>
 🔥 Quiz Populaires
 </h2>
-
 
 
 <div class="quiz-list">
 
 
+
 <div class="quiz-card">
 
-<h3>Culture Générale</h3>
+<h3>
+Culture Générale
+</h3>
 
-<p>20 Questions</p>
+<p>
+20 Questions
+</p>
 
 <button class="startQuiz">
 Commencer
 </button>
+
 
 </div>
 
 
 
 
+
 <div class="quiz-card">
 
-<h3>Football</h3>
+<h3>
+Football
+</h3>
 
-<p>15 Questions</p>
+<p>
+20 Questions
+</p>
 
 <button class="startQuiz">
 Commencer
 </button>
+
 
 </div>
 
 
 
 
+
 <div class="quiz-card">
 
-<h3>Cinéma</h3>
+<h3>
+Technologie
+</h3>
 
-<p>10 Questions</p>
+<p>
+20 Questions
+</p>
 
 <button class="startQuiz">
 Commencer
 </button>
+
 
 </div>
 
@@ -199,46 +344,132 @@ Commencer
 </section>
 
 
+<section id="quizArea" class="quiz-box" style="display:none;">
 
 
+<div class="quiz-header">
 
-
-
-<section id="quizSection" class="quiz-box" style="display:none;">
-
-
-<h2 id="question"></h2>
-
-
-<div id="answers"></div>
-
-
-<button id="nextBtn">
-Question suivante ➡️
-</button>
-
-
-</section>
-
-
-
-
-
-
-
-<section id="result" class="result-box" style="display:none;">
-
-
-<h2>
-🏆 Résultat
+<h2 id="quizCategory">
+Football
 </h2>
 
 
-<p id="scoreText"></p>
+<div class="timer">
+
+⏱️
+<span id="time">
+15
+</span>s
+
+</div>
 
 
-<button id="restartBtn">
-Recommencer
+</div>
+
+
+
+
+<div class="question-number">
+
+Question 
+<span id="questionNumber">
+1
+</span>
+
+</div>
+
+
+
+<h2 id="questionText">
+
+La question apparaît ici
+
+</h2>
+
+
+
+
+
+<div id="answers">
+
+
+<button class="answer">
+Réponse 1
+</button>
+
+
+<button class="answer">
+Réponse 2
+</button>
+
+
+<button class="answer">
+Réponse 3
+</button>
+
+
+<button class="answer">
+Réponse 4
+</button>
+
+
+</div>
+
+
+
+
+
+
+<button id="nextQuestion">
+
+Question suivante ➡️
+
+</button>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<section id="resultArea" class="result-box" style="display:none;">
+
+
+
+<h2>
+🏆 Résultat Final
+</h2>
+
+
+
+<h3 id="finalScore">
+
+Score: 0
+
+</h3>
+
+
+
+<p>
+
+⭐ XP gagné:
+<span id="earnedXP">
+0
+</span>
+
+</p>
+
+
+
+<button id="playAgain">
+
+Rejouer
+
 </button>
 
 
@@ -250,7 +481,8 @@ Recommencer
 
 
 
-<section>
+
+<section class="ranking-section">
 
 
 <h2>
@@ -258,28 +490,36 @@ Recommencer
 </h2>
 
 
+
 <ol class="ranking">
 
-<li>👑 Joueur 1 - 2500 XP</li>
 
-<li>🥈 Joueur 2 - 2300 XP</li>
-
-<li>🥉 Joueur 3 - 2100 XP</li>
-
-<li>⭐ Joueur 4 - 1800 XP</li>
-
-<li>⭐ Joueur 5 - 1600 XP</li>
-
-</ol>
+<li>
+👑 Joueur 1 - 2500 XP
+</li>
 
 
-</section>
+<li>
+🥈 Joueur 2 - 2300 XP
+</li>
 
+
+<li>
+🥉 Joueur 3 - 2100 XP
+</li>
+
+
+<li>
+⭐ Joueur 4 - 1800 XP
+</li>
+
+
+<li>
+⭐ Joueur 5 - 1600 XP
+</li>
 
 
 </main>
-
-
 
 
 
@@ -289,30 +529,58 @@ Recommencer
 
 
 <a class="active">
+
 🏠
-<span>Accueil</span>
+
+<span>
+Accueil
+</span>
+
 </a>
 
 
+
 <a>
+
 📚
-<span>Quiz</span>
+
+<span>
+Quiz
+</span>
+
 </a>
 
 
+
+
 <a>
+
 🏆
-<span>Classement</span>
+
+<span>
+Classement
+</span>
+
 </a>
+
+
 
 
 <a>
+
 👤
-<span>Profil</span>
+
+<span>
+Profil
+</span>
+
 </a>
+
 
 
 </nav>
+
+
 
 
 
@@ -324,3 +592,10 @@ Recommencer
 </body>
 
 </html>
+
+</ol>
+
+
+</section>
+
+  
